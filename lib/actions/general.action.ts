@@ -115,7 +115,7 @@ export async function getInterviewsByUserId(
   const interviews = await db
     .collection("interviews")
     .where("userId", "==", userId)
-    .orderBy("createdAt", "desc")
+    // .orderBy("createdAt", "desc")
     .get();
 
   return interviews.docs.map((doc) => ({
