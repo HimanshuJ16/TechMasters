@@ -35,23 +35,38 @@ Built with Next.js for the user interface and backend logic, Firebase for authen
 - Google Gemeni
 - Zod
 
-## <a name="features">🔋 Features</a>
+<a name="features">🔋 Features</a>
+👉 Authentication: Secure Sign Up and Sign In using email/password, powered by Firebase Authentication.
 
-👉 **Authentication**: Sign Up and Sign In using password/email authentication handled by Firebase.
+👉 Create Interviews: Quickly generate job interviews with the help of Vapi Voice Assistants and Google Gemini, tailored to the job role and domain.
 
-👉 **Create Interviews**: Easily generate job interviews with help of Vapi voice assistants and Google Gemini.
+👉 AI-Powered Interviewing: Engage in voice-based interviews with an AI voice agent that understands context and evaluates responses in real time.
 
-👉 **Get feedback from AI**: Take the interview with AI voice agent, and receive instant feedback based on your conversation.
+👉 Instant Feedback from AI: Get instant, actionable feedback based on your performance, communication style, and content understanding.
 
-👉 **Modern UI/UX**: A sleek and user-friendly interface designed for a great experience.
+👉 Real-Time Coding Interface: Integrated live coding environment where candidates solve problems during the interview. Supports syntax highlighting, auto-evaluation, and live execution.
 
-👉 **Interview Page**: Conduct AI-driven interviews with real-time feedback and detailed transcripts.
+👉 Cheating Detection: Built-in cheating detection using Python, including:
 
-👉 **Dashboard**: Manage and track all your interviews with easy navigation.
+Face detection via webcam
 
-👉 **Responsiveness**: Fully responsive design that works seamlessly across devices.
+Multiple face alerts
 
-and many more, including code architecture and reusability
+Background voice monitoring
+
+Tab-switch monitoring
+
+👉 Modern UI/UX: Minimal, intuitive, and responsive UI for both interviewers and candidates, enhancing usability.
+
+👉 Interview Page: Clean and focused interface to conduct AI-led interviews with real-time transcripts, sentiment analysis, and response tracking.
+
+👉 Dashboard: Centralized dashboard to manage candidates, view past interviews, feedback summaries, and performance analytics.
+
+👉 Responsiveness: Fully responsive design that works seamlessly across mobile, tablet, and desktop devices.
+
+👉 Modular Architecture: Clean and scalable code architecture with reusable components, efficient state management, and well-structured API layers.
+
+👉 More Features Coming Soon: Including team collaboration, multi-language support, and role-based access control for organizations.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
