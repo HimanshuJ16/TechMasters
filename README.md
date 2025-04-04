@@ -32,41 +32,39 @@ Built with Next.js for the user interface and backend logic, Firebase for authen
 - Tailwind CSS
 - Vapi AI
 - shadcn/ui
-- Google Gemeni
+- Google Gemini
 - Zod
 
 <a name="features">🔋 Features</a>
-👉 Authentication: Secure Sign Up and Sign In using email/password, powered by Firebase Authentication.
 
-👉 Create Interviews: Quickly generate job interviews with the help of Vapi Voice Assistants and Google Gemini, tailored to the job role and domain.
+👉 **Authentication**: Secure Sign Up and Sign In using email/password, powered by Firebase Authentication.
 
-👉 AI-Powered Interviewing: Engage in voice-based interviews with an AI voice agent that understands context and evaluates responses in real time.
+👉 **Create Interviews**: Quickly generate job interviews with the help of Vapi Voice Assistants and Google Gemini, tailored to the job role and domain.
 
-👉 Instant Feedback from AI: Get instant, actionable feedback based on your performance, communication style, and content understanding.
+👉 **AI-Powered Interviewing**: Engage in voice-based interviews with an AI voice agent that understands context and evaluates responses in real time.
 
-👉 Real-Time Coding Interface: Integrated live coding environment where candidates solve problems during the interview. Supports syntax highlighting, auto-evaluation, and live execution.
+👉 **Instant Feedback from AI**: Get instant, actionable feedback based on your performance, communication style, and content understanding.
 
-👉 Cheating Detection: Built-in cheating detection using Python, including:
+👉 **Real-Time Coding Interface**: Integrated live coding environment where candidates solve problems during the interview. Supports syntax highlighting, auto-evaluation, and live execution.
 
-Face detection via webcam
+👉 **Cheating Detection**: Built-in cheating detection using Python, including:
 
-Multiple face alerts
+- Face detection via webcam
+- Multiple face alerts
+- Background voice monitoring
+- Tab-switch monitoring
 
-Background voice monitoring
+👉 **Modern UI/UX**: Minimal, intuitive, and responsive UI for both interviewers and candidates, enhancing usability.
 
-Tab-switch monitoring
+👉 **Interview Page**: Clean and focused interface to conduct AI-led interviews with real-time transcripts, sentiment analysis, and response tracking.
 
-👉 Modern UI/UX: Minimal, intuitive, and responsive UI for both interviewers and candidates, enhancing usability.
+👉 **Dashboard**: Centralized dashboard to manage candidates, view past interviews, feedback summaries, and performance analytics.
 
-👉 Interview Page: Clean and focused interface to conduct AI-led interviews with real-time transcripts, sentiment analysis, and response tracking.
+👉 **Responsiveness**: Fully responsive design that works seamlessly across mobile, tablet, and desktop devices.
 
-👉 Dashboard: Centralized dashboard to manage candidates, view past interviews, feedback summaries, and performance analytics.
+👉 **Modular Architecture**: Clean and scalable code architecture with reusable components, efficient state management, and well-structured API layers.
 
-👉 Responsiveness: Fully responsive design that works seamlessly across mobile, tablet, and desktop devices.
-
-👉 Modular Architecture: Clean and scalable code architecture with reusable components, efficient state management, and well-structured API layers.
-
-👉 More Features Coming Soon: Including team collaboration, multi-language support, and role-based access control for organizations.
+👉 **More Features Coming Soon**: Including team collaboration, multi-language support, and role-based access control for organizations.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
