@@ -12,14 +12,14 @@ const Layout = async ({ children }: { children: ReactNode }) => {
   const user = await getCurrentUser();
 
   async function handleSignOut() {
-    "use server"; // Needed if you're using Next.js server actions
+    "use server";
     await signOut();
     redirect("/sign-in");
   }
 
   return (
     <div className="root-layout">
-      <nav className="flex items-center justify-between px-4 py-3 shadow-sm">
+      <nav className="flex flex-wrap items-center justify-between gap-4 px-4 py-3 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="MockMate Logo" width={38} height={32} />
           <h2 className="text-primary-100 text-3xl font-semibold">PrepWise</h2>
@@ -31,7 +31,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
           <form action={handleSignOut}>
             <button
               type="submit"
-              className="px-3 py-1 text-sm rounded-md text-red-700 hover:bg-red-700/20 transition"
+              className="px-4 py-1.5 text-sm rounded-md text-red-700 hover:bg-red-700/10 transition sm:mt-0"
             >
               Sign Out
             </button>
