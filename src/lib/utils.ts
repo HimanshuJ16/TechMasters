@@ -1,6 +1,6 @@
-import { interviewCovers, mappings } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { interviewCovers, mappings } from "../constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
