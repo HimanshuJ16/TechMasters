@@ -12,6 +12,7 @@ import { generateCodeFeedback } from "@/lib/actions/code.action"
 
 import CodingChallengeModal from "./CodingChallenge/CodingChallengeModal"
 import CodingView from "./CodingChallenge/CodingView"
+import { analyzeProctoringViolations } from "@/lib/actions/proctoring.action"
 
 enum CallStatus {
   INACTIVE = "INACTIVE",
@@ -52,8 +53,11 @@ const Agent = ({ userName, userId, interviewId, feedbackId, type, questions }: A
   const [showCodingChallenge, setShowCodingChallenge] = useState(false)
   const [codingChallengeAccepted, setCodingChallengeAccepted] = useState(false)
   const [codingQuestion, setCodingQuestion] = useState<any>(null)
-  const [submittedCode, setSubmittedCode] = useState<{ code: string; language: string } | null>(null)
+  const [submittedCode, setSubmittedCode] = useState<{ code: string; language: string; violations?: any[] } | null>(
+    null,
+  )
   const [codeFeedback, setCodeFeedback] = useState<string | null>(null)
+  const [proctoringFeedback, setProctoringFeedback] = useState<string | null>(null)
 
   useEffect(() => {
     const onCallStart = () => {
@@ -71,16 +75,9 @@ const Agent = ({ userName, userId, interviewId, feedbackId, type, questions }: A
         setMessages((prev) => [...prev, newMessage])
 
         // Check if the message is from the assistant and contains a trigger for coding challenge
-        if (
-          message.role === "assistant" &&
-          type !== "generate" &&
-          !showCodingChallenge &&
-          !codingChallengeAccepted
-        ) {
+        if (message.role === "assistant" && type !== "generate" && !showCodingChallenge && !codingChallengeAccepted) {
           const triggerPhrases = ["coding challenge"]
-          const containsTrigger = triggerPhrases.some(phrase =>
-            message.transcript.toLowerCase().includes(phrase)
-          )
+          const containsTrigger = triggerPhrases.some((phrase) => message.transcript.toLowerCase().includes(phrase))
 
           if (containsTrigger) {
             const interviewRaw = localStorage.getItem(`interview_${interviewId}`)
@@ -150,12 +147,21 @@ const Agent = ({ userName, userId, interviewId, feedbackId, type, questions }: A
 
       // Generate code feedback if code was submitted
       let codeFeedbackText = null
+      let proctoringFeedbackText = null
+
       if (submittedCode && codingQuestion) {
         try {
+          // Generate code feedback
           codeFeedbackText = await generateCodeFeedback(submittedCode.code, submittedCode.language, codingQuestion)
           setCodeFeedback(codeFeedbackText)
+
+          // Generate proctoring feedback separately if violations exist
+          if (submittedCode.violations && submittedCode.violations.length > 0) {
+            proctoringFeedbackText = await analyzeProctoringViolations(submittedCode.violations)
+            setProctoringFeedback(proctoringFeedbackText)
+          }
         } catch (error) {
-          console.error("Error generating code feedback:", error)
+          console.error("Error generating feedback:", error)
         }
       }
 
@@ -165,6 +171,7 @@ const Agent = ({ userName, userId, interviewId, feedbackId, type, questions }: A
         transcript: messages,
         feedbackId,
         codeFeedback: codeFeedbackText,
+        proctoringFeedback: proctoringFeedbackText, // Pass proctoring feedback separately
       })
 
       if (success && id) {
@@ -244,8 +251,8 @@ const Agent = ({ userName, userId, interviewId, feedbackId, type, questions }: A
     setCodingChallengeAccepted(false)
   }
 
-  const handleSubmitCode = (code: string, language: string) => {
-    setSubmittedCode({ code, language })
+  const handleSubmitCode = (code: string, language: string, violations?: any[]) => {
+    setSubmittedCode({ code, language, violations })
     setCodingChallengeAccepted(false)
   }
 

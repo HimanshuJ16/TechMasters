@@ -11,7 +11,8 @@ interface Feedback {
   areasForImprovement: string[]
   finalAssessment: string
   createdAt: string
-  codeFeedback?: string // Added for code feedback
+  codeFeedback?: string // Code feedback
+  proctoringFeedback?: string // Separate proctoring feedback
 }
 
 interface Interview {
@@ -32,7 +33,8 @@ interface CreateFeedbackParams {
   userId: string
   transcript: { role: string; content: string }[]
   feedbackId?: string
-  codeFeedback?: string // Added for code feedback
+  codeFeedback?: string
+  proctoringFeedback?: string // Added separate proctoring feedback
 }
 
 interface User {
@@ -119,4 +121,17 @@ interface ExecuteCodeResponse {
     id: number
     description: string
   }
+}
+
+// Anti-cheat system interfaces
+interface AntiCheatViolation {
+  type: string
+  details: string
+  timestamp: string
+}
+
+interface AntiCheatSystemProps {
+  isActive: boolean
+  onViolation: (type: string, details: string) => void
+  onMaxViolations: () => void
 }

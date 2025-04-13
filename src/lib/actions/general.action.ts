@@ -12,40 +12,41 @@ interface CreateFeedbackParams {
   transcript: { role: string; content: string }[]
   feedbackId?: string
   codeFeedback?: string | null
+  proctoringFeedback?: string | null
 }
 
 interface Interview {
-  id: string; // Optional if Firestore auto-generates it
-  userId: string;
-  role: string;
-  type: string;
-  level: string;
-  techstack: string[]; // Array of tech stack strings
-  questions: string[]; // Non-coding or behavioral/technical questions
+  id: string // Optional if Firestore auto-generates it
+  userId: string
+  role: string
+  type: string
+  level: string
+  techstack: string[] // Array of tech stack strings
+  questions: string[] // Non-coding or behavioral/technical questions
   codingQuestion?: {
-    _id: string;
-    title: string;
-    description: string;
-    difficulty: string;
-    category: string;
+    _id: string
+    title: string
+    description: string
+    difficulty: string
+    category: string
     examples: {
-      input: string;
-      output: string;
-      explanation?: string;
-    }[];
-    constraints: string[];
-    starterCode: string;
+      input: string
+      output: string
+      explanation?: string
+    }[]
+    constraints: string[]
+    starterCode: string
     testCases: {
-      input: string;
-      output: string;
-      hidden: boolean;
-    }[];
-    timeLimit: number; // in milliseconds
-    memoryLimit: number; // in kilobytes
-  } | null;
-  finalized: boolean;
-  coverImage: string;
-  createdAt: string; // ISO date string
+      input: string
+      output: string
+      hidden: boolean
+    }[]
+    timeLimit: number // in milliseconds
+    memoryLimit: number // in kilobytes
+  } | null
+  finalized: boolean
+  coverImage: string
+  createdAt: string // ISO date string
 }
 
 interface GetFeedbackByInterviewIdParams {
@@ -64,6 +65,7 @@ interface Feedback {
   finalAssessment: string
   createdAt: string
   codeFeedback: string | null
+  proctoringFeedback: string | null
 }
 
 interface GetLatestInterviewsParams {
@@ -72,7 +74,7 @@ interface GetLatestInterviewsParams {
 }
 
 export async function createFeedback(params: CreateFeedbackParams) {
-  const { interviewId, userId, transcript, feedbackId, codeFeedback } = params
+  const { interviewId, userId, transcript, feedbackId, codeFeedback, proctoringFeedback } = params
 
   try {
     const formattedTranscript = transcript
@@ -111,6 +113,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
       finalAssessment: object.finalAssessment,
       createdAt: new Date().toISOString(),
       codeFeedback: codeFeedback || null,
+      proctoringFeedback: proctoringFeedback || null, // Store proctoring feedback separately
     }
 
     let feedbackRef

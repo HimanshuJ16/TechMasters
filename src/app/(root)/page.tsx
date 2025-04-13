@@ -9,6 +9,7 @@ import {
   getInterviewsByUserId,
   getLatestInterviews,
 } from "@/lib/actions/general.action";
+import Navbar from "@/components/Navbar";
 
 async function Home() {
   const user = await getCurrentUser();
@@ -23,6 +24,7 @@ async function Home() {
 
   return (
     <>
+      <Navbar />
       <section className="card-cta">
         <div className="flex flex-col gap-6 max-w-lg">
           <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
