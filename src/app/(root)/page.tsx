@@ -10,9 +10,14 @@ import {
   getLatestInterviews,
 } from "@/lib/actions/general.action";
 import Navbar from "@/components/Navbar";
+import { redirect } from "next/navigation";
 
 async function Home() {
   const user = await getCurrentUser();
+
+  if (!user) {
+    redirect("/sign-in");
+  }
 
   const [userInterviews, allInterview] = await Promise.all([
     getInterviewsByUserId(user?.id!),
