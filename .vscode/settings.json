@@ -6,7 +6,7 @@
     "source.addMissingImports": "explicit"
   },
   "prettier.tabWidth": 2,
-  "prettier.useTabs": false,
+  "prettier.useTabs": false, 
   "prettier.semi": true,
   "prettier.singleQuote": false,
   "prettier.jsxSingleQuote": false,
