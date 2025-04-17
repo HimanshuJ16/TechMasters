@@ -265,7 +265,7 @@ const AntiCheatSystem = forwardRef<{ stopCamera: () => void }, AntiCheatSystemPr
       }
     }, [])
 
-    if (!isActive) return null
+    if (!isActive) return null 
 
     return (
       <div className="fixed bottom-4 right-4 z-50 flex items-end gap-2">

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog"
 
 interface CodingChallengeModalProps {
-  isOpen: boolean
+  isOpen: boolean 
   onClose: () => void
   onAccept: () => void
   codingQuestion: any

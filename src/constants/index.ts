@@ -121,7 +121,7 @@ export const interviewer: CreateAssistantDTO = {
 Interview Guidelines:
 Follow the structured question flow:
 {{questions}}
-
+ 
 Coding Challenge Information (if available):
 {{codingQuestion}}
 

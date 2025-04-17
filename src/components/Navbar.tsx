@@ -10,7 +10,7 @@ const Navbar = async () => {
   const user = await getCurrentUser();
 
   async function handleSignOut() {
-    "use server";
+    "use server"; 
     await signOut();
     redirect("/sign-in");
   }

@@ -13,7 +13,7 @@ interface Feedback {
   createdAt: string
   codeFeedback?: string // Code feedback
   proctoringFeedback?: string // Separate proctoring feedback
-}
+} 
 
 interface Interview {
   id: string

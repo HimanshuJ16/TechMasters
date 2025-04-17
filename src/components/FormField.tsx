@@ -26,7 +26,7 @@ const FormField = <T extends FieldValues>({
   return (
     <Controller
       control={control}
-      name={name}
+      name={name} 
       render={({ field }) => (
         <FormItem>
           <FormLabel className="label">{label}</FormLabel>

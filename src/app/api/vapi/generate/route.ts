@@ -41,7 +41,7 @@ export async function POST(request: Request) {
             "_id": "unique_id_string",
             "title": "Problem Title",
             "description": "Detailed problem description with HTML formatting allowed",
-            "difficulty": "${level}",
+            "difficulty": "${level}", 
             "category": "One of: Arrays, Strings, Linked Lists, Trees, Graphs, Dynamic Programming, etc.",
             "examples": [
               {

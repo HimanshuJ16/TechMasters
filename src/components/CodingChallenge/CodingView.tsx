@@ -98,7 +98,7 @@ const CodingView = ({ codingQuestion, onClose, onSubmitCode }: CodingViewProps) 
           onViolation={handleViolation}
           onMaxViolations={handleMaxViolations}
         />
-      </div>
+      </div> 
     </div>
   )
 }

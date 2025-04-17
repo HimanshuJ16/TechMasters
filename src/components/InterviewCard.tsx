@@ -10,7 +10,7 @@ import { getFeedbackByInterviewId } from "@/lib/actions/general.action";
 
 const InterviewCard = async ({
   interviewId,
-  userId,
+  userId, 
   role,
   type,
   techstack,

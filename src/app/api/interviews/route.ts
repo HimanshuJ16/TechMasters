@@ -12,7 +12,7 @@ interface Interview {
   codingQuestion?: {
     _id: string;
     title: string;
-    description: string;
+    description: string; 
     difficulty: string;
     category: string;
     examples: {

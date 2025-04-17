@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword, 
 } from "firebase/auth";
 
 import { Form } from "@/components/ui/form";

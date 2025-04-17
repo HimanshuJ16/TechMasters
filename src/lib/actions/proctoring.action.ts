@@ -15,7 +15,7 @@ export async function analyzeProctoringViolations(violations: any[]): Promise<st
       prompt: `
         You are an AI proctor analyzing potential violations during a coding interview. 
         Review the following violations detected during the candidate's coding challenge:
-        
+         
         ${violations
           .map(
             (v, i) =>

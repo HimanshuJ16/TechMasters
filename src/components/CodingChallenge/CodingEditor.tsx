@@ -73,7 +73,7 @@ const CodingEditor = ({ codingQuestion, onClose, onRequestHint, onSubmitCode }: 
     }
   }
 
-  const handleSubmitCode = () => {
+  const handleSubmitCode = () => { 
     onSubmitCode(code, language.name)
   }
 

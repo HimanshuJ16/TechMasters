@@ -116,7 +116,7 @@ export async function getCurrentUser(): Promise<User | null> {
     return {
       ...userRecord.data(),
       id: userRecord.id,
-    } as User;
+    } as User; 
   } catch (error) {
     console.log(error);
 
